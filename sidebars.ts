@@ -34,7 +34,7 @@ const sidebars: SidebarsConfig = {
         description: 'Implement the ROS 2 based nervous system.',
         slug: '/module3-ros2-nervous-system',
       },
-      items: ['module3-ros2-nervous-system/chapter1-core-components'],
+      items: ['module3-ros2-nervous-system/chapter1-core-components', 'module3-ros2-nervous-system/chapter2-ros2-architecture', 'module3-ros2-nervous-system/chapter3-building-a-nervous-system'],
     },
   ],
 };
