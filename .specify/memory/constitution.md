@@ -1,55 +1,74 @@
-# [PROJECT_NAME] Constitution
-<!-- Example: Spec Constitution, TaskFlow Constitution, etc. -->
+<!--
+Sync Impact Report
+Version change:  -> 0.1.0
+List of modified principles:
+  - PROJECT_NAME: AI-Native Physical Intelligence Book with Embedded RAG Chatbot
+  - PRINCIPLE_1_NAME: Technical Accuracy
+  - PRINCIPLE_1_DESCRIPTION: All factual and technical claims must be traceable to primary and official sources. Prefer official documentation, recognized standards, and peer-reviewed research.
+  - PRINCIPLE_2_NAME: Clarity and Accessibility
+  - PRINCIPLE_2_DESCRIPTION: All content must be accessible and understandable for advanced undergraduate to graduate level students in AI, Robotics, and Computer Science, prioritizing clarity and didactic value.
+  - PRINCIPLE_3_NAME: Reproducibility
+  - PRINCIPLE_3_DESCRIPTION: All code, architectural designs, and experimental results must be reproducible. Code must be executable or clearly labeled as pseudocode, and environments should be well-documented.
+  - PRINCIPLE_4_NAME: AI-Native, Spec-Driven Development
+  - PRINCIPLE_4_DESCRIPTION: The development process follows an AI-native, spec-driven approach where architectural decisions are explicitly justified and documented, guiding implementation.
+  - SECTION_2_NAME: Content & Writing Guidelines
+  - SECTION_2_CONTENT:
+      - Format: Docusaurus book deployed to GitHub Pages
+      - Tone: Precise, instructional, system-oriented
+      - Audience: Advanced undergraduate to graduate level
+      - Each module includes concepts, architecture, implementation, and constraints
+  - SECTION_3_NAME: RAG Chatbot Constraints
+  - SECTION_3_CONTENT:
+      - Stack: OpenAI Agents/ChatKit, FastAPI, Neon Postgres, Qdrant Cloud
+      - Answers only from indexed book content
+      - Must respect user-selected text boundaries
+      - No hallucinations; cite chapter/section in responses
+  - GOVERNANCE_RULES: This constitution is the supreme governing document for the project. All amendments must be formally documented, approved by project leadership, and include a migration plan if applicable. Compliance with this constitution will be verified through code reviews and regular audits. Adherence to these principles is mandatory for all contributors.
+Added sections:
+  - Content & Writing Guidelines
+  - RAG Chatbot Constraints
+Removed sections:
+  - None
+Templates requiring updates:
+  - .specify/templates/plan-template.md: ⚠ pending
+  - .specify/templates/spec-template.md: ⚠ pending
+  - .specify/templates/tasks-template.md: ⚠ pending
+  - .specify/templates/commands/*.md: ⚠ pending (no files found in glob, but still need to check if any get created later)
+Follow-up TODOs:
+  - TODO(RATIFICATION_DATE): Original adoption date is unknown, please provide.
+-->
+# AI-Native Physical Intelligence Book with Embedded RAG Chatbot Constitution
 
 ## Core Principles
 
-### [PRINCIPLE_1_NAME]
-<!-- Example: I. Library-First -->
-[PRINCIPLE_1_DESCRIPTION]
-<!-- Example: Every feature starts as a standalone library; Libraries must be self-contained, independently testable, documented; Clear purpose required - no organizational-only libraries -->
+### Technical Accuracy
+All factual and technical claims must be traceable to primary and official sources. Prefer official documentation, recognized standards, and peer-reviewed research.
 
-### [PRINCIPLE_2_NAME]
-<!-- Example: II. CLI Interface -->
-[PRINCIPLE_2_DESCRIPTION]
-<!-- Example: Every library exposes functionality via CLI; Text in/out protocol: stdin/args → stdout, errors → stderr; Support JSON + human-readable formats -->
+### Clarity and Accessibility
+All content must be accessible and understandable for advanced undergraduate to graduate level students in AI, Robotics, and Computer Science, prioritizing clarity and didactic value.
 
-### [PRINCIPLE_3_NAME]
-<!-- Example: III. Test-First (NON-NEGOTIABLE) -->
-[PRINCIPLE_3_DESCRIPTION]
-<!-- Example: TDD mandatory: Tests written → User approved → Tests fail → Then implement; Red-Green-Refactor cycle strictly enforced -->
+### Reproducibility
+All code, architectural designs, and experimental results must be reproducible. Code must be executable or clearly labeled as pseudocode, and environments should be well-documented.
 
-### [PRINCIPLE_4_NAME]
-<!-- Example: IV. Integration Testing -->
-[PRINCIPLE_4_DESCRIPTION]
-<!-- Example: Focus areas requiring integration tests: New library contract tests, Contract changes, Inter-service communication, Shared schemas -->
+### AI-Native, Spec-Driven Development
+The development process follows an AI-native, spec-driven approach where architectural decisions are explicitly justified and documented, guiding implementation.
 
-### [PRINCIPLE_5_NAME]
-<!-- Example: V. Observability, VI. Versioning & Breaking Changes, VII. Simplicity -->
-[PRINCIPLE_5_DESCRIPTION]
-<!-- Example: Text I/O ensures debuggability; Structured logging required; Or: MAJOR.MINOR.BUILD format; Or: Start simple, YAGNI principles -->
+## Content & Writing Guidelines
 
-### [PRINCIPLE_6_NAME]
+Format: Docusaurus book deployed to GitHub Pages
+Tone: Precise, instructional, system-oriented
+Audience: Advanced undergraduate to graduate level
+Each module includes concepts, architecture, implementation, and constraints
 
+## RAG Chatbot Constraints
 
-[PRINCIPLE__DESCRIPTION]
-
-## [SECTION_2_NAME]
-<!-- Example: Additional Constraints, Security Requirements, Performance Standards, etc. -->
-
-[SECTION_2_CONTENT]
-<!-- Example: Technology stack requirements, compliance standards, deployment policies, etc. -->
-
-## [SECTION_3_NAME]
-<!-- Example: Development Workflow, Review Process, Quality Gates, etc. -->
-
-[SECTION_3_CONTENT]
-<!-- Example: Code review requirements, testing gates, deployment approval process, etc. -->
+Stack: OpenAI Agents/ChatKit, FastAPI, Neon Postgres, Qdrant Cloud
+Answers only from indexed book content
+Must respect user-selected text boundaries
+No hallucinations; cite chapter/section in responses
 
 ## Governance
-<!-- Example: Constitution supersedes all other practices; Amendments require documentation, approval, migration plan -->
 
-[GOVERNANCE_RULES]
-<!-- Example: All PRs/reviews must verify compliance; Complexity must be justified; Use [GUIDANCE_FILE] for runtime development guidance -->
+This constitution is the supreme governing document for the project. All amendments must be formally documented, approved by project leadership, and include a migration plan if applicable. Compliance with this constitution will be verified through code reviews and regular audits. Adherence to these principles is mandatory for all contributors.
 
-**Version**: [CONSTITUTION_VERSION] | **Ratified**: [RATIFICATION_DATE] | **Last Amended**: [LAST_AMENDED_DATE]
-<!-- Example: Version: 2.1.1 | Ratified: 2025-06-13 | Last Amended: 2025-07-16 -->
+**Version**: 0.1.0 | **Ratified**: TODO(RATIFICATION_DATE): Original adoption date is unknown, please provide. | **Last Amended**: 2025-12-15
