@@ -77,7 +77,7 @@ const config: Config = {
               to: '/docs/intro',
             },
             {
-              label: 'Module 3: ROS 2 Nervous System',
+              label: 'Module 3: The AI-Robot Brain (NVIDIA Isaac™)',
               to: '/docs/module3-ros2-nervous-system/chapter1-core-components',
             },
           ],
