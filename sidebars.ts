@@ -27,14 +27,14 @@ const sidebars: SidebarsConfig = {
     },
     {
       type: 'category',
-      label: 'Module 3: ROS 2 Nervous System',
+      label: 'Module 3: The AI-Robot Brain (NVIDIA Isaac™)',
       link: {
         type: 'generated-index',
-        title: 'Module 3: ROS 2 Nervous System',
-        description: 'Implement the ROS 2 based nervous system.',
-        slug: '/module3-ros2-nervous-system',
+        title: 'Module 3: The AI-Robot Brain (NVIDIA Isaac™)',
+        description: 'Understand and implement the AI-Robot Brain using NVIDIA Isaac technologies.',
+        slug: '/module3-ai-robot-brain',
       },
-      items: ['module3-ros2-nervous-system/chapter1-core-components', 'module3-ros2-nervous-system/chapter2-ros2-architecture', 'module3-ros2-nervous-system/chapter3-building-a-nervous-system'],
+      items: ['module3-ai-robot-brain/chapter1-core-components', 'module3-ai-robot-brain/chapter2-ros2-architecture', 'module3-ai-robot-brain/chapter3-building-a-nervous-system'],
     },
   ],
 };
