@@ -7,6 +7,8 @@
 
 ## User Scenarios & Testing *(mandatory)*
 
+<!-- TODO: Outline initial user stories and requirements as part of task T005 -->
+
 <!--
   IMPORTANT: User stories should be PRIORITIZED as user journeys ordered by importance.
   Each user story/journey must be INDEPENDENTLY TESTABLE - meaning if you implement just ONE of them,

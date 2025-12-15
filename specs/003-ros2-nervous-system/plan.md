@@ -2,6 +2,7 @@
 
 ## 1. Objective
 [Briefly state the main goal of this module/feature. What problem does it solve or what capability does it add?]
+<!-- TODO: Define core concepts and architecture as part of task T004 -->
 
 ## 2. Scope
 [Define the boundaries of this plan. What aspects are included, and what are explicitly excluded? What are the key deliverables?]

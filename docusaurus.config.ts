@@ -3,7 +3,7 @@ import type {Config} from '@docusaurus/types';
 import type * as Preset from '@docusaurus/preset-classic';
 
 const config: Config = {
-  title: 'AI-Native Physical Intelligence Book',
+  title: 'Physical AI & Humanoid Robotics Course',
   tagline: 'A book on building AI-native physical intelligence systems.',
   favicon: 'img/favicon.ico',
 
@@ -47,7 +47,7 @@ const config: Config = {
       respectPrefersColorScheme: true,
     },
     navbar: {
-      title: 'AI-Native Physical Intelligence Book',
+      title: 'Physical AI & Humanoid Robotics Course',
       logo: {
         alt: 'My Site Logo',
         src: 'img/logo.svg',
@@ -57,14 +57,7 @@ const config: Config = {
           type: 'docSidebar',
           sidebarId: 'tutorialSidebar',
           position: 'left',
-          label: 'Module 1: ROS 2',
-        },
-        {
-          type: 'docSidebar',
-          sidebarId: 'tutorialSidebar',
-          position: 'left',
-          label: 'Module 2: Digital Twin',
-          to: '/docs/module2-digital-twin/chapter1-gazebo-simulation',
+          label: 'TextBook',
         },
         {
           href: 'https://github.com/your-org/ai-native-book',
@@ -82,6 +75,10 @@ const config: Config = {
             {
               label: 'Module 1: ROS 2',
               to: '/docs/intro',
+            },
+            {
+              label: 'Module 3: ROS 2 Nervous System',
+              to: '/docs/module3-ros2-nervous-system/chapter1-core-components',
             },
           ],
         },

@@ -25,6 +25,17 @@ const sidebars: SidebarsConfig = {
       },
       items: ['module2-digital-twin/chapter1-gazebo-simulation', 'module2-digital-twin/chapter2-unity-digital-twins', 'module2-digital-twin/chapter3-sensor-simulation'],
     },
+    {
+      type: 'category',
+      label: 'Module 3: ROS 2 Nervous System',
+      link: {
+        type: 'generated-index',
+        title: 'Module 3: ROS 2 Nervous System',
+        description: 'Implement the ROS 2 based nervous system.',
+        slug: '/module3-ros2-nervous-system',
+      },
+      items: ['module3-ros2-nervous-system/chapter1-core-components'],
+    },
   ],
 };
 
