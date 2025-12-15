@@ -28,5 +28,7 @@ Markdown (Docusaurus): Follow standard conventions
 
 - 001-ros2-nervous-system: Added Markdown (Docusaurus) + Docusaurus
 
+- 003-ros2-nervous-system: Added Markdown (Docusaurus) + Docusaurus
+
 <!-- MANUAL ADDITIONS START -->
 <!-- MANUAL ADDITIONS END -->
