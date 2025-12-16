@@ -4,7 +4,7 @@ sidebar_position: 1
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('/img/Robotics and Artificial Intelligence (AI).jpg')} alt="Robotics and AI Banner" style={{width: '50%', borderRadius: '8px', marginBottom: '2rem', display: 'block', marginLeft: 'auto', marginRight: 'auto'}} />
+<img src={useBaseUrl('/img/Robotics and Artificial Intelligence (AI).jpg')} alt="Robotics and AI Banner" style={{width: '30%', borderRadius: '8px', marginBottom: '2rem'}} />
 
 # Introduction: Physical AI & Humanoid Robotics Course
 
