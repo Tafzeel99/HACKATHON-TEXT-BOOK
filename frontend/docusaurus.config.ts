@@ -11,7 +11,7 @@ const config: Config = {
     v4: true,
   },
 
-  url: 'https://your-docusaurus-site.example.com',
+  url: 'https://physical-ai-robotics-one.vercel.app/',
   baseUrl: '/',
 
   organizationName: 'your-org', 
@@ -31,7 +31,7 @@ const config: Config = {
         docs: {
           sidebarPath: './sidebars.ts',
           editUrl:
-            'https://github.com/your-org/ai-native-book/tree/main/',
+            'https://github.com/Tafzeel99/HACKATHON-TEXT-BOOK',
         },
         blog: false,
         theme: {
@@ -60,7 +60,7 @@ const config: Config = {
           label: 'TextBook',
         },
         {
-          href: 'https://github.com/your-org/ai-native-book',
+          href: 'https://github.com/Tafzeel99/HACKATHON-TEXT-BOOK',
           label: 'GitHub',
           position: 'right',
         },
