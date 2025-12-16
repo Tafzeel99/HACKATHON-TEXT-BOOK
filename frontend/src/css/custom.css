@@ -30,3 +30,74 @@
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
   --ifm-footer-background-color: #000000; /* Dark black for footer */
 }
+
+/* Ensure hero banner text is white in dark mode */
+[data-theme='dark'] .hero__title,
+[data-theme='dark'] .hero__subtitle {
+  color: white;
+}
+
+/* General paragraph styling for improved readability */
+p {
+  line-height: 1.75;
+  font-size: 1.05em;
+  margin-bottom: 1rem;
+}
+
+/* Adjust paragraph margins for lists and other elements if needed */
+li p {
+  margin-bottom: 0.5rem;
+}
+
+/* Styling for the module list on the Introduction page */
+.module-list {
+  background-color: var(--ifm-background-color);
+  border-radius: var(--ifm-border-radius);
+  padding: 1.5rem;
+  margin: 1.5rem 0;
+  box-shadow: var(--ifm-global-shadow-md);
+}
+
+.module-list ul {
+  list-style: none; /* Remove default bullet points */
+  padding-left: 0;
+}
+
+.module-list li {
+  margin-bottom: 0.8rem;
+  padding-left: 1.5rem;
+  position: relative;
+}
+
+.module-list li:before {
+  content: '🤖'; /* Robot emoji as custom bullet point */
+  position: absolute;
+  left: 0;
+  color: var(--ifm-color-primary);
+}
+
+.module-list li:last-child {
+  margin-bottom: 0;
+}
+
+/* Styling for Code Blocks and Mermaid diagrams */
+.docusaurus-highlighted-code-line.codeBlockLines_node_modules-\@docusaurus-theme-classic-lib-theme-CodeBlock-styles-module,
+.codeBlockContainer_node_modules-\@docusaurus-theme-classic-lib-theme-CodeBlock-styles-module {
+  background-color: var(--ifm-code-background-color) !important;
+  border-radius: var(--ifm-code-border-radius);
+  box-shadow: var(--ifm-global-shadow-md); /* Add subtle shadow to code blocks */
+}
+
+.codeBlockLines_node_modules-\@docusaurus-theme-classic-lib-theme-CodeBlock-styles-module {
+  padding: 1rem;
+}
+
+/* Responsive Mermaid diagrams */
+.mermaid {
+  overflow-x: auto; /* Enable horizontal scrolling for large diagrams */
+  background-color: var(--ifm-code-background-color);
+  padding: 1rem;
+  border-radius: var(--ifm-code-border-radius);
+  box-shadow: var(--ifm-global-shadow-md);
+  margin-bottom: var(--ifm-spacing-vertical);
+}

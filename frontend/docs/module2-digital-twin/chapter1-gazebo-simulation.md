@@ -54,3 +54,7 @@ Simulating realistic robot interaction with the environment involves:
 -   **Navigation**: How robots move through an environment, avoiding obstacles and reaching target locations.
 
 By mastering these elements, users can create sophisticated simulation scenarios that accurately reflect real-world robotic applications, enabling robust testing and development of control algorithms.
+
+import ChapterFooter from '@site/src/components/ChapterFooter';
+
+<ChapterFooter />

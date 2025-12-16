@@ -8,3 +8,7 @@ This chapter introduces the concept of Vision-Language-Action (VLA) systems, foc
 *   **LLMs in Robotics**: The role of LLMs in interpreting commands, cognitive planning, and decision-making for robots.
 *   **Action Generation**: How high-level plans are translated into executable robot actions.
 *   **Capstone Project Overview**: A brief introduction to the Autonomous Humanoid Capstone Project.
+
+import ChapterFooter from '@site/src/components/ChapterFooter';
+
+<ChapterFooter />

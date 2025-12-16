@@ -57,3 +57,7 @@ graph LR
     Nav -- Requests Path --> Planner[Path Planner Service];
     Planner -- Responds with Path --> Nav;
 ```
+
+import ChapterFooter from '@site/src/components/ChapterFooter';
+
+<ChapterFooter />

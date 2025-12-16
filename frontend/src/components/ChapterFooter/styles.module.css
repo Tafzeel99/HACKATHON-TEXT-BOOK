@@ -1,0 +1,24 @@
+.chapterFooter {
+  margin-top: 3rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--ifm-toc-border-color); /* Subtle border for separation */
+  text-align: center;
+  font-style: italic;
+  color: var(--ifm-color-gray-700);
+}
+
+[data-theme='dark'] .chapterFooter {
+  color: var(--ifm-color-gray-500);
+}
+
+.divider {
+  border: none;
+  border-top: 1px dashed var(--ifm-hr-border-color); /* Dashed line for visual break */
+  margin: 1.5rem auto;
+  width: 50%; /* Shorter line for aesthetics */
+}
+
+.message {
+  font-size: 0.95em;
+  line-height: 1.5;
+}

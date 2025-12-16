@@ -106,3 +106,7 @@ A **subscriber node** is responsible for receiving data (messages) from a specif
 ## 6. ROS2 Launch Files
 
 **Launch files** are XML or Python scripts used to start and configure multiple ROS2 nodes simultaneously. They are crucial for orchestrating complex robotic systems.
+
+import ChapterFooter from '@site/src/components/ChapterFooter';
+
+<ChapterFooter />
