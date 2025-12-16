@@ -1,5 +1,11 @@
 # Dependencies
 /node_modules
+__pycache__/
+*.pyc
+.venv/
+venv/
+dist/
+*.egg-info/
 
 # Production
 /build
@@ -10,6 +16,11 @@
 
 # Misc
 .DS_Store
+Thumbs.db
+*.tmp
+*.swp
+.vscode/
+.idea/
 .env.local
 .env.development.local
 .env.test.local

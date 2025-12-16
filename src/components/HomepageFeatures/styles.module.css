@@ -1,11 +1,140 @@
 .features {
-  display: flex;
-  align-items: center;
-  padding: 2rem 0;
+  padding: 3rem 0;
   width: 100%;
 }
 
+/* =========================
+   Feature Card
+========================= */
+.featureCard {
+  position: relative;
+  background: var(--ifm-background-surface-color);
+  border-radius: 16px;
+  padding: 1.5rem 1.2rem;
+  margin: 0.75rem;
+  height: 100%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+
+  border: 2px solid transparent;
+  background-clip: padding-box;
+
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* =========================
+   Gradient Border
+========================= */
+.featureCard::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 16px;
+  padding: 2px;
+
+  background: linear-gradient(
+    135deg,
+    #301934,
+    #4b1f52,
+    #6a2c70,
+    #8f3c8c
+  );
+
+  background-size: 300% 300%;
+  opacity: 0;
+  transition: opacity 0.35s ease;
+  z-index: -1;
+}
+
+/* =========================
+   Hover Glow
+========================= */
+.featureCard:hover {
+  transform: translateY(-6px);
+  box-shadow:
+    0 18px 40px rgba(48, 25, 52, 0.55),
+    0 0 30px rgba(143, 60, 140, 0.45);
+}
+
+.featureCard:hover::before {
+  opacity: 1;
+  animation: gradientShift 6s ease infinite;
+}
+
+/* =========================
+   SVG
+========================= */
 .featureSvg {
-  height: 200px;
+  height: 140px;
   width: 200px;
+  margin-bottom: 1rem;
+  border-radius: 8px; /* Rounded corners for images */
+}
+
+/* =========================
+   Title Link (UPDATED)
+========================= */
+.featureLink {
+  text-decoration: none;
+}
+
+.featureLink h3 {
+  font-size: 1.05rem;
+  margin-bottom: 0.5rem;
+  color: var(--ifm-color-primary);
+  transition: color 0.25s ease;
+}
+
+/* 🔥 TEXT TURNS WHITE ON HOVER */
+.featureCard:hover .featureLink h3 {
+  color: #ffffff;
+}
+
+/* =========================
+   Description
+========================= */
+.featureCard p {
+  font-size: 0.9rem;
+  line-height: 1.55;
+  color: var(--ifm-font-color-base);
+}
+
+/* =========================
+   Equal Height Columns
+========================= */
+.row > div {
+  display: flex;
+}
+
+/* =========================
+   Dark Mode
+========================= */
+[data-theme='dark'] .featureCard {
+  background: #0f172a;
+}
+
+[data-theme='dark'] .featureCard p {
+  color: #cbd5e1;
+}
+
+[data-theme='dark'] .featureLink h3 {
+  color: #e2e8f0;
+}
+
+/* Still white on hover in dark mode */
+[data-theme='dark'] .featureCard:hover .featureLink h3 {
+  color: #ffffff;
+}
+
+/* =========================
+   Gradient Animation
+========================= */
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }

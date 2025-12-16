@@ -36,6 +36,26 @@ const sidebars: SidebarsConfig = {
       },
       items: ['module3-ros2-nervous-system/chapter1-core-components', 'module3-ros2-nervous-system/chapter2-ros2-architecture', 'module3-ros2-nervous-system/chapter3-building-a-nervous-system'],
     },
+    {
+      type: 'category',
+      label: 'Module 4: Vision-Language-Action (VLA)',
+      link: {
+        type: 'generated-index',
+        title: 'Module 4: Vision-Language-Action (VLA)',
+        description: 'Explore the convergence of LLMs and Robotics for Vision-Language-Action (VLA).',
+        slug: '/module4-vla',
+      },
+      items: [
+        'module4-vla/chapter1-introduction',
+        'module4-vla/chapter2-voice-command-processing',
+        'module4-vla/chapter3-cognitive-planning',
+        'module4-vla/chapter4-robot-perception',
+        'module4-vla/chapter5-robot-navigation',
+        'module4-vla/chapter6-robot-manipulation',
+        'module4-vla/chapter7-system-orchestration',
+        'module4-vla/chapter8-conclusion',
+      ],
+    },
   ],
 };
 

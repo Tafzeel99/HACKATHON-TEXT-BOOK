@@ -1,55 +1,73 @@
-import type {ReactNode} from 'react';
+import type { ReactNode } from 'react';
 import clsx from 'clsx';
 import Heading from '@theme/Heading';
 import styles from './styles.module.css';
+import Link from '@docusaurus/Link';
 
 type FeatureItem = {
   title: string;
-  Svg: React.ComponentType<React.ComponentProps<'svg'>>;
+  imgSrc: string; // Changed from Svg
   description: ReactNode;
+  link: string;
 };
 
 const FeatureList: FeatureItem[] = [
   {
-    title: 'Easy to Use',
-    Svg: require('@site/static/img/undraw_docusaurus_mountain.svg').default,
+    title: 'Module 1: ROS 2 Fundamentals',
+    imgSrc: '/img/module1.png', // Changed to PNG path
+    link: '/docs/module1-ros2',
     description: (
       <>
-        Docusaurus was designed from the ground up to be easily installed and
-        used to get your website up and running quickly.
+        Establishes the foundational concepts of the Robot Operating System (ROS 2),
+        Python agent development, and URDF modeling.
       </>
     ),
   },
   {
-    title: 'Focus on What Matters',
-    Svg: require('@site/static/img/undraw_docusaurus_tree.svg').default,
+    title: 'Module 2: Digital Twin Simulation',
+    imgSrc: '/img/module2.png', // Changed to PNG path
+    link: '/docs/module2-digital-twin',
     description: (
       <>
-        Docusaurus lets you focus on your docs, and we&apos;ll do the chores. Go
-        ahead and move your docs into the <code>docs</code> directory.
+        Explores digital twins using Gazebo and Unity to enable high-fidelity
+        robot simulation and realistic sensor data generation.
       </>
     ),
   },
   {
-    title: 'Powered by React',
-    Svg: require('@site/static/img/undraw_docusaurus_react.svg').default,
+    title: 'Module 3: The AI-Robot Brain',
+    imgSrc: '/img/module3.png', // Changed to PNG path
+    link: '/docs/module3-ros2-nervous-system',
     description: (
       <>
-        Extend or customize your website layout by reusing React. Docusaurus can
-        be extended while reusing the same header and footer.
+        Focuses on the architecture of an AI-powered robot brain,
+        integrating perception, planning, and decision-making systems.
+      </>
+    ),
+  },
+  {
+    title: 'Module 4: Vision-Language-Action (VLA)',
+    imgSrc: '/img/module4.png', // Changed to PNG path
+    link: '/docs/module4-vla',
+    description: (
+      <>
+        Demonstrates the integration of Large Language Models (LLMs)
+        with robotics to enable natural language-driven robot actions.
       </>
     ),
   },
 ];
 
-function Feature({title, Svg, description}: FeatureItem) {
+function Feature({ title, imgSrc, description, link }: FeatureItem) {
   return (
-    <div className={clsx('col col--4')}>
-      <div className="text--center">
-        <Svg className={styles.featureSvg} role="img" />
-      </div>
-      <div className="text--center padding-horiz--md">
-        <Heading as="h3">{title}</Heading>
+    <div className={clsx('col col--3')}>
+      <div className={styles.featureCard}>
+        <img src={imgSrc} className={styles.featureSvg} alt={title} /> {/* Changed to img tag */}
+
+        <Link to={link} className={styles.featureLink}>
+          <Heading as="h3">{title}</Heading>
+        </Link>
+
         <p>{description}</p>
       </div>
     </div>

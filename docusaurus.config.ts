@@ -3,9 +3,9 @@ import type {Config} from '@docusaurus/types';
 import type * as Preset from '@docusaurus/preset-classic';
 
 const config: Config = {
-  title: 'Physical AI & Humanoid Robotics Course',
+  title: 'Physical AI & Humanoid Robotics',
   tagline: 'A book on building AI-native physical intelligence systems.',
-  favicon: 'img/favicon.ico',
+  favicon: '/img/Robotics and Artificial Intelligence (AI).jpg',
 
   future: {
     v4: true,
@@ -47,10 +47,10 @@ const config: Config = {
       respectPrefersColorScheme: true,
     },
     navbar: {
-      title: 'Physical AI & Humanoid Robotics Course',
+      title: 'Physical AI & Humanoid Robotics',
       logo: {
         alt: 'My Site Logo',
-        src: 'img/logo.svg',
+        src: '/img/Robotics and Artificial Intelligence (AI).jpg',
       },
       items: [
         {
@@ -70,32 +70,24 @@ const config: Config = {
       style: 'dark',
       links: [
         {
-          title: 'Modules',
+          title: 'Textbook',
           items: [
             {
-              label: 'Module 1: ROS 2',
-              to: '/docs/intro',
-            },
-            {
-              label: 'Module 3: The AI-Robot Brain (NVIDIA Isaac™)',
-              to: '/docs/module3-ros2-nervous-system/chapter1-core-components',
-            },
-          ],
+              label: 'Physical AI & Humanoid Robotics',
+              to: '/docs/intro'
+            }
+          ]
         },
         {
           title: 'Community',
           items: [
             {
-              label: 'Stack Overflow',
-              href: 'https://stackoverflow.com/questions/tagged/docusaurus',
+              label: 'LinkedIn',
+              href: 'https://www.linkedin.com/in/tafzeel-ahmed-khan-379510366/',
             },
             {
-              label: 'Discord',
-              href: 'https://discordapp.com/invite/docusaurus',
-            },
-            {
-              label: 'X',
-              href: 'https://x.com/docusaurus',
+              label: 'Github',
+              href: 'https://github.com/Tafzeel99',
             },
           ],
         },
@@ -103,13 +95,13 @@ const config: Config = {
           title: 'More',
           items: [
             {
-              label: 'GitHub',
-              href: 'https://github.com/your-org/ai-native-book',
+              label: 'Instagram',
+              href: 'https://www.instagram.com/tafzeel._.here/',
             },
           ],
         },
       ],
-      copyright: `Copyright © ${new Date().getFullYear()} My Project, Inc. Built with Docusaurus.`,
+      copyright: `Copyright © ${new Date().getFullYear()}, Built by Tafzeel®❤️.`,
     },
     prism: {
       theme: prismThemes.github,

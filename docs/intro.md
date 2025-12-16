@@ -2,12 +2,19 @@
 sidebar_position: 1
 ---
 
-# Introduction to the AI-Native Physical Intelligence Book
+# Introduction: Physical AI & Humanoid Robotics Course
 
-Welcome to the AI-Native Physical Intelligence Book! This book aims to provide a comprehensive guide to understanding and building intelligent robotic systems using an AI-native and spec-driven development approach.
+Welcome to the **Physical AI & Humanoid Robotics Course**! This textbook provides a practical guide to building intelligent robotic systems using an AI-native, spec-driven approach. You will learn to design, implement, and deploy robots that perceive, reason, and act in the physical world.
 
-In this book, you will explore the convergence of Artificial Intelligence and Robotics, learning how to design, implement, and deploy robots that can perceive, reason, and act intelligently in the physical world. We will cover fundamental concepts, architectural patterns, and practical examples to equip you with the knowledge and skills needed to develop the next generation of AI-powered robots.
+## Course Structure: Key Learning Modules
 
-Each module in this book will delve into specific aspects of AI-Native Physical Intelligence, building upon the foundational knowledge established in previous chapters. We encourage you to follow along with the examples, experiment with the code, and engage with the concepts presented to maximize your learning experience.
+This course is structured into focused modules:
 
-Let's embark on this exciting journey into the world of AI-Native Physical Intelligence!
+*   **Module 1: ROS 2 Fundamentals**: Master the basics of ROS 2, Python agents, and URDF modeling for robotics.
+*   **Module 2: Digital Twin Simulation**: Explore digital twins with Gazebo and Unity for robot simulation and sensor data.
+*   **Module 3: The AI-Robot Brain (NVIDIA Isaac™)**: Understand AI-driven robot architectures using NVIDIA Isaac™ for cognitive capabilities.
+*   **Module 4: Vision-Language-Action (VLA)**: Integrate LLMs with robotics to enable natural language control for autonomous humanoids.
+
+Each module offers essential concepts, architectural patterns, and practical implementation details. Engage with examples and code to maximize your learning.
+
+Embark on your journey to develop the next generation of AI-powered physical intelligence!

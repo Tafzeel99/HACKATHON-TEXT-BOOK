@@ -92,7 +92,7 @@ A **subscriber node** is responsible for receiving data (messages) from a specif
 -   **Service Server**: Implements the service and provides the response.
 -   **Service Client**: Makes requests to the service server.
 
-## 4. ROS2 Actions
+<h2> 4. ROS2 Actions</h2>
 
 **Actions** are a long-running, asynchronous communication mechanism. They are used for tasks that take a significant amount of time to complete and provide periodic feedback.
 
