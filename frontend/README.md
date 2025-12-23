@@ -15,6 +15,16 @@ The textbook is structured into four core modules, each delving into essential c
 
 Each module includes in-depth explanations, illustrative examples, and practical guidance to maximize your learning and empower you to develop the next generation of AI-powered physical intelligence.
 
+### Interactive AI Book Assistant
+
+This textbook features an integrated AI assistant that allows you to ask questions about the book content and receive contextual answers with source citations. The assistant uses a Retrieval-Augmented Generation (RAG) system to provide accurate responses based on the book's content.
+
+**Features:**
+*   **Contextual Q&A**: Ask questions about specific parts of the book
+*   **Text Selection**: Select text in the book and ask related questions
+*   **Source Citations**: Responses include page numbers, chapters, and sections where information was found
+*   **Real-time Interaction**: Instant responses to your questions
+
 ### Getting Started (Local Development)
 
 To set up the project locally and start the development server:

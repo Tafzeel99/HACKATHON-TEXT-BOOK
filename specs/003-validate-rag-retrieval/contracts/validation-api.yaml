@@ -1,0 +1,384 @@
+openapi: 3.0.0
+info:
+  title: RAG Retrieval Validation API
+  description: API for validating the RAG retrieval pipeline functionality
+  version: 1.0.0
+servers:
+  - url: http://localhost:8000
+    description: Local development server
+
+paths:
+  /validate/connectivity:
+    get:
+      summary: Validate vector database connectivity
+      description: Tests if the system can connect to the vector database and perform basic operations
+      responses:
+        '200':
+          description: Connectivity validation successful
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    type: boolean
+                    example: true
+                  message:
+                    type: string
+                    example: "Successfully connected to vector database"
+                  details:
+                    type: object
+                    properties:
+                      collection_exists:
+                        type: boolean
+                        example: true
+                      search_functional:
+                        type: boolean
+                        example: true
+        '500':
+          description: Connectivity validation failed
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    type: boolean
+                    example: false
+                  error:
+                    type: string
+                    example: "Failed to connect to vector database"
+
+  /validate/semantic-relevance:
+    post:
+      summary: Validate semantic relevance of retrieved passages
+      description: Tests if queries return semantically relevant book passages
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - queries
+              properties:
+                queries:
+                  type: array
+                  items:
+                    type: string
+                  example: ["ROS 2 architecture patterns", "digital twin simulation"]
+                top_k:
+                  type: integer
+                  default: 3
+                  example: 3
+      responses:
+        '200':
+          description: Semantic relevance validation completed
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    type: boolean
+                    example: true
+                  results:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        query:
+                          type: string
+                        relevance_ratio:
+                          type: number
+                          format: float
+                        top_result_preview:
+                          type: string
+                  summary:
+                    type: object
+                    properties:
+                      total_queries:
+                        type: integer
+                      average_relevance:
+                        type: number
+                        format: float
+                      validation_passed:
+                        type: boolean
+
+  /validate/ranking:
+    post:
+      summary: Validate result ranking by similarity score
+      description: Tests if results are properly ranked by similarity score
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - query
+              properties:
+                query:
+                  type: string
+                  example: "machine learning in robotics"
+                top_k:
+                  type: integer
+                  default: 5
+                  example: 5
+      responses:
+        '200':
+          description: Ranking validation completed
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    type: boolean
+                    example: true
+                  is_properly_ranked:
+                    type: boolean
+                    example: true
+                  scores:
+                    type: array
+                    items:
+                      type: number
+                      format: float
+                    example: [0.85, 0.78, 0.72, 0.65, 0.58]
+                  validation_details:
+                    type: object
+                    properties:
+                      scores_in_descending_order:
+                        type: boolean
+                      min_score:
+                        type: number
+                        format: float
+                      max_score:
+                        type: number
+                        format: float
+
+  /validate/metadata:
+    post:
+      summary: Validate metadata return accuracy
+      description: Tests if metadata (URL, module, section) is returned correctly
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - query
+              properties:
+                query:
+                  type: string
+                  example: "introduction to robotics"
+                top_k:
+                  type: integer
+                  default: 3
+                  example: 3
+      responses:
+        '200':
+          description: Metadata validation completed
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    type: boolean
+                    example: true
+                  results:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        text:
+                          type: string
+                        url:
+                          type: string
+                          format: uri
+                        score:
+                          type: number
+                          format: float
+                  metadata_accuracy:
+                    type: object
+                    properties:
+                      url_present:
+                        type: number
+                        format: float
+                        description: Percentage of results with valid URL
+                      all_metadata_present:
+                        type: boolean
+                      validation_passed:
+                        type: boolean
+
+  /validate/edge-cases:
+    post:
+      summary: Test system behavior for edge cases
+      description: Tests handling of empty, vague, and malformed queries
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                queries:
+                  type: array
+                  items:
+                    type: string
+                  example: ["", "   ", "a", "xyz123abc", "robot robot robot"]
+      responses:
+        '200':
+          description: Edge case validation completed
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    type: boolean
+                    example: true
+                  results:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        query:
+                          type: string
+                        handled_gracefully:
+                          type: boolean
+                        response_time_ms:
+                          type: number
+                        result_count:
+                          type: integer
+                  all_cases_handled:
+                    type: boolean
+
+  /validate/latency:
+    post:
+      summary: Measure retrieval latency and stability
+      description: Tests query response time and performance stability
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                query:
+                  type: string
+                  example: "physical AI and humanoid robotics concepts"
+                num_tests:
+                  type: integer
+                  default: 10
+                  example: 10
+                top_k:
+                  type: integer
+                  default: 3
+                  example: 3
+      responses:
+        '200':
+          description: Latency measurement completed
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    type: boolean
+                    example: true
+                  latency_stats:
+                    type: object
+                    properties:
+                      average_ms:
+                        type: number
+                        format: float
+                      min_ms:
+                        type: number
+                        format: float
+                      max_ms:
+                        type: number
+                        format: float
+                      std_dev_ms:
+                        type: number
+                        format: float
+                      num_tests:
+                        type: integer
+                      acceptable_performance:
+                        type: boolean
+                        description: Whether performance meets <2 second requirement
+                  results:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        test_number:
+                          type: integer
+                        latency_ms:
+                          type: number
+                          format: float
+                        result_count:
+                          type: integer
+
+  /validate/full-suite:
+    post:
+      summary: Run complete validation suite
+      description: Executes all validation tests and returns comprehensive results
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                test_config:
+                  type: object
+                  properties:
+                    include_connectivity:
+                      type: boolean
+                      default: true
+                    include_semantic_relevance:
+                      type: boolean
+                      default: true
+                    include_ranking:
+                      type: boolean
+                      default: true
+                    include_metadata:
+                      type: boolean
+                      default: true
+                    include_edge_cases:
+                      type: boolean
+                      default: true
+                    include_latency:
+                      type: boolean
+                      default: true
+      responses:
+        '200':
+          description: Complete validation suite executed
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    type: boolean
+                    example: true
+                  all_tests_passed:
+                    type: boolean
+                  individual_results:
+                    type: object
+                    additionalProperties:
+                      type: boolean
+                  summary:
+                    type: object
+                    properties:
+                      total_tests:
+                        type: integer
+                      passed_tests:
+                        type: integer
+                      failed_tests:
+                        type: integer
+                      execution_time_ms:
+                        type: number
+                        format: float
