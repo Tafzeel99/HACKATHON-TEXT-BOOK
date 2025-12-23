@@ -1,0 +1,171 @@
+/* =========================================================
+   ChatbotLauncher.css
+   Launcher ALWAYS bottom-right
+   Chat UI responsive (centered on small screens)
+   ========================================================= */
+
+/* ===============================
+   Launcher Container (ALL SCREENS)
+   =============================== */
+
+.chatbot-launcher-container {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 9999;
+  font-family: system-ui, -apple-system, sans-serif;
+}
+
+/* ===============================
+   Launcher Button
+   =============================== */
+
+/* ===============================
+   Launcher Button (AVATAR ONLY)
+   =============================== */
+/* ===============================
+   Launcher Button (AVATAR ONLY)
+   =============================== */
+
+.chatbot-launcher-btn {
+  width: 80px;          /* ⬆️ increased */
+  height: 80px;         /* ⬆️ increased */
+  padding: 0;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+/* Avatar image inside button */
+.chatbot-launcher-btn img {
+  width: 80px;          /* ⬆️ increased */
+  height: 80px;         /* ⬆️ increased */
+  object-fit: contain;
+  border-radius: 50%;
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+/* Hover glow */
+.chatbot-launcher-btn:hover img {
+  transform: scale(1.1);
+  filter: drop-shadow(0 0 16px rgba(48, 25, 52, 0.75));
+}
+
+/* Focus */
+.chatbot-launcher-btn:focus-visible img {
+  filter: drop-shadow(0 0 14px rgba(122, 74, 126, 0.85));
+}
+
+/* ===============================
+   Chat Interface (Desktop Default)
+   =============================== */
+
+.chatbot-interface {
+  position: fixed;
+  bottom: 90px;               /* Above launcher */
+  right: 20px;
+  width: 380px;
+  height: 500px;
+  max-width: calc(100vw - 40px);
+  max-height: calc(100vh - 120px);
+  opacity: 0;
+  transform: translateY(16px);
+  transition: all 0.25s ease;
+  z-index: 9999;
+  box-sizing: border-box;
+}
+
+.chatbot-interface.open {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.chatbot-interface.closed {
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* =====================================================
+   MOBILE LOGIC (ONLY CHAT UI CHANGES — NOT BUTTON)
+   ===================================================== */
+
+@media (max-width: 768px) {
+  .chatbot-interface {
+    left: 50%;
+    right: auto;
+    bottom: 90px;
+    transform: translateX(-50%) translateY(16px);
+
+    width: calc(100vw - 20px);
+    height: 60vh;
+    max-height: calc(100vh - 120px);
+  }
+
+  .chatbot-interface.open {
+    transform: translateX(-50%) translateY(0);
+  }
+}
+
+/* ===============================
+   Extra Small Devices
+   =============================== */
+
+@media (max-width: 480px) {
+  .chatbot-interface {
+    height: 55vh;
+    bottom: 80px;
+  }
+}
+
+/* ===============================
+   Short Height Screens
+   =============================== */
+
+@media (max-height: 600px) {
+  .chatbot-interface {
+    height: 65vh;
+    max-height: calc(100vh - 90px);
+  }
+}
+
+/* ===============================
+   Landscape Mobile
+   =============================== */
+
+@media (max-height: 500px) and (orientation: landscape) {
+  .chatbot-interface {
+    height: 70vh;
+    bottom: 70px;
+  }
+}
+
+/* ===============================
+   react-chatbotify Styling
+   =============================== */
+
+.chatbot-launcher-container .rcb-chat-container {
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  border-radius: 14px !important;
+  overflow: hidden;
+}
+
+.chatbot-launcher-container .rcb-header {
+  background-color: #301934 !important;
+  color: #ffffff !important;
+}
+
+.chatbot-launcher-container .rcb-user-message {
+  background-color: #d1c0c7 !important;
+  color: #333 !important;
+  border-radius: 18px 18px 4px 18px !important;
+}
+
+.chatbot-launcher-container .rcb-bot-message {
+  background-color: #c5c9ce !important;
+  color: #333 !important;
+  border-radius: 18px 18px 18px 4px !important;
+}
