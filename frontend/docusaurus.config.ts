@@ -14,7 +14,7 @@ const config: Config = {
   url: 'https://physical-ai-robotics-one.vercel.app/',
   baseUrl: '/',
 
-  organizationName: 'your-org', 
+  organizationName: 'your-org',
   projectName: 'ai-native-book',
 
   onBrokenLinks: 'throw',
@@ -22,6 +22,11 @@ const config: Config = {
   i18n: {
     defaultLocale: 'en',
     locales: ['en'],
+  },
+
+  // Pass environment variables to client-side
+  customFields: {
+    REACT_APP_RAG_API_URL: process.env.REACT_APP_RAG_API_URL || 'http://localhost:8000',
   },
 
   presets: [
