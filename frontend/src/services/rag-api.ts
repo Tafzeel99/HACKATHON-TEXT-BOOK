@@ -31,19 +31,25 @@ interface RAGApiResponse {
 }
 
 class RAGApiService {
-  private baseUrl: string;
   private sessionId: string | null = null;
 
   constructor() {
-    // Use environment variable or default to localhost
-    // In Docusaurus, environment variables with REACT_APP_ prefix are available at build time
-    // Use window object for runtime access if needed
-    const apiURL = typeof process !== 'undefined' && process.env ?
-      (process.env.REACT_APP_RAG_API_URL || 'http://localhost:8000') :
-      'http://localhost:8000';
+    // For Docusaurus, we'll set the base URL dynamically in each request
+    // since environment variables are processed at build time
+  }
 
-    // Fallback to a global variable if process.env is not available in browser
-    this.baseUrl = apiURL;
+  private getBaseUrl(): string {
+    // Try multiple approaches to get the API URL
+    if (typeof window !== 'undefined' && (window as any).env?.REACT_APP_RAG_API_URL) {
+      // Check for custom window environment
+      return (window as any).env.REACT_APP_RAG_API_URL;
+    } else if (typeof process !== 'undefined' && process.env?.REACT_APP_RAG_API_URL) {
+      // Build-time environment variable
+      return process.env.REACT_APP_RAG_API_URL;
+    } else {
+      // Default fallback
+      return 'http://localhost:8000';
+    }
   }
 
   // Method to send a message to the RAG backend
@@ -54,7 +60,7 @@ class RAGApiService {
         include_context: true  // Backend expects 'include_context' field
       };
 
-      const response = await axios.post<RAGApiResponse>(`${this.baseUrl}/query`, requestBody, {
+      const response = await axios.post<RAGApiResponse>(`${this.getBaseUrl()}/query`, requestBody, {
         headers: {
           'Content-Type': 'application/json'
         },
