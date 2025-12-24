@@ -47,8 +47,8 @@ class RAGApiService {
       // Build-time environment variable
       return process.env.REACT_APP_RAG_API_URL;
     } else {
-      // Default fallback
-      return 'http://localhost:8000';
+      // Use the deployed backend URL as fallback instead of localhost
+      return 'https://tafzeel99-hackathon-text-book-backend.hf.space';
     }
   }
 
